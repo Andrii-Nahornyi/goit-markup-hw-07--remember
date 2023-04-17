@@ -492,11 +492,12 @@ span.accent {
 
 .customer-item {
 	width: calc((100% - 16px) / 2);
+	height: 88px;
 }
 
 .customer-link {
 	width: 100%;
-	height: auto;
+	height: 88px;
 
 	color: var(--customer-icon-color);
 	border: 1px solid var(--customer-icon-color);
@@ -1178,8 +1179,17 @@ span.accent {
 		width: calc((100% - 24px) / 2);
 	}
 
+	.customers-container {
+		width: 582px;
+		/* height: 360px; */
+	}
+
+	.customers-list {
+		column-gap: 24px;
+	}
+
 	.customer-item {
-		width: calc((100% - 32px) / 3);
+		width: calc((100% - 48px) / 3);
 	}
 
 	.customer-link {
@@ -1410,8 +1420,7 @@ span.accent {
 	}
 
 	.customers-list {
-		row-gap: 0;
-		column-gap: 24px;
+		flex-wrap: nowrap;
 	}
 
 	.customer-item {
