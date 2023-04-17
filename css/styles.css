@@ -1,29 +1,3 @@
-	/* calc((100% - кіль-сть_відступів_в_рядку * довжина_одного_відступу_в_рядку) / кіль-сть_елементів_в_рядку) */
-
-/* основний колір тексту, абзаців #434455 */
-
-/* другорядний колір тексту #2E2F42 */
-
-/* білий колір: шапка, футер, фон - #E7E9FC */
-
-/* білий колір тексту футер, та btn(Portfolio) #F4F4FD */
-
-/* колір акценту(ефектів) #4D5AE5 */
-
-/* logo: Raleway(800)
-
-nav a(500), contact-list(400), h1(700), 
-btn(500), h2(700) h3(500), p(400),  'Roboto';
-
-700 - Bold
-500 - 
-400 - Normal */
-
-/* Ширина контейнеру: 1128px + 15px padding (right/left) */
-
-
-
-
 :root {
 	--border-white-color: #E7E9FC;
 	--text-color: #434455;
@@ -190,11 +164,10 @@ span.accent {
 }
 
 .menu-open-btn {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	padding-right: 0;
-	padding-left: 20px;
+	padding: 0;
 	margin-left: auto;
+	height: 22px;
+
 	border: none;
 	background-color: transparent;
 }
@@ -202,7 +175,8 @@ span.accent {
 .mob-menu {
 	position: fixed;
 	top: 0;
-	z-index: 1;
+	left: 0;
+	z-index: 1000;
 
 	width: 100%;
 	height: 100%;
@@ -217,6 +191,19 @@ span.accent {
 	flex-direction: column;
 	justify-content: space-between;
 	overflow: auto;
+
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+
+	transition: opacity 250ms var(--timing-function),
+		visibility 250ms var(--timing-function);
+}
+
+.mob-menu.is-open {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
 }
 
 .menu-close-btn {
@@ -254,6 +241,10 @@ span.accent {
 	color: #2E2F42;
 }
 
+.menu-link.accent {
+	color: var(--accent-color);
+}
+
 .menu-contact-list {
 	display: block;
 	margin-bottom: 48px;
@@ -261,7 +252,7 @@ span.accent {
 
 .menu-tel-link {
 	font-weight: 700;
-	font-size: 36px;
+	font-size: calc(100vw * 5/54 - 98px/27);
 	line-height: 1.11;
 	letter-spacing: 0.02em;
 	color: var(--accent-color);
@@ -277,10 +268,8 @@ span.accent {
 
 .menu-social-list {
 	display: flex;
-}
-
-.menu-social-item:not(:last-child) {
-	margin-right: 56px;
+	widows: 100%;
+	justify-content: space-between;
 }
 
 /* Hero */
@@ -509,7 +498,7 @@ span.accent {
 }
 
 
-/* Footer */
+/* - - Footer - - */
 
 .footer {
 	padding-top: 96px;
@@ -643,7 +632,7 @@ span.accent {
 	fill: var(--main-background-color);
 }
 
-/* PORTFOLIO */
+/* - - Portfolio - - */
 
 .filter-list {
 	width: 100%;
@@ -741,7 +730,7 @@ span.accent {
 }
 
 
-/* Backdrop */
+/* - - Backdrop - - */
 
 .is-hidden {
 	visibility: hidden;
@@ -923,10 +912,6 @@ span.accent {
 	margin-bottom: 24px;
 }
 
-/* .checkbox-input:focus {
-	border-color: var(--accent-color);
-} */
-
 .checkbox-label {
 	display: flex;
 	align-items: center;
@@ -967,28 +952,6 @@ span.accent {
 	border-color: var(--passed-color);
 }
 
-
-/* Another way to add checkbox */
-
-/* .checkbox-label::before {
-	content: "";
-	width: 16px;
-	height: 16px;
-	margin-right: 8px;
-	
-	border: 1px solid rgba(46, 47, 66, 0.4);
-	border-radius: 2px;
-}
-
-.checkbox-input:checked + .checkbox-label::before {
-	background-color: var(--passed-color);
-	border: none;
-
-	background-image: url(../image/icons/checkbox-active.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-} */
-
 .checkbox-link {
 	color: var(--accent-color);
 	text-transform: capitalize;
@@ -1003,6 +966,18 @@ span.accent {
 	.customer-link {
 		width: 190px;
 		height: 88px;
+	}
+
+	.menu-tel-link {
+		font-size: 36px;
+	}
+
+	.menu-social-list {
+		justify-content: flex-start;
+	}
+	
+	.menu-social-item:not(:last-child) {
+		margin-right: 56px;
 	}
 }
 
@@ -1041,8 +1016,7 @@ span.accent {
 		padding-bottom: 16px;
 		margin-left: auto;
 	}
-	
-		/* .contact-link, */
+
 	.nav-link {
 		display: flex;
 		align-items: center;
@@ -1056,7 +1030,6 @@ span.accent {
 		font-size: 12px;
 		line-height: 1.17;
 		letter-spacing: 0.04em;
-
 
 		color: var(--text-color);
 	
@@ -1175,7 +1148,6 @@ span.accent {
 
 	.customers-container {
 		width: 582px;
-		/* height: 360px; */
 	}
 
 	.customers-list {
@@ -1259,9 +1231,7 @@ span.accent {
 	}
 }
 
-
 @media screen and (min-width: 1158px) {
-
 
 
 	.contact-box {
@@ -1300,12 +1270,7 @@ span.accent {
 		fill: currentColor;
 	}
 
-	/* .contact-list {
-		display: flex;
-		flex-wrap: wrap;
-		align-content: center;
-	} */
-
+/* - - - Hero min-width: 1158px - - - */
 
 	.hero {
 		max-width: 1440px;
