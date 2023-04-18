@@ -144,6 +144,12 @@ span.accent {
 .header-container {
 	display: flex;
 	align-items: center;
+
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .header-container .logo {
@@ -181,8 +187,7 @@ span.accent {
 	width: 100%;
 	height: 100%;
 	padding-left: 40px;
-	padding-right: 24px;
-	padding-top: 24px;
+	padding-top: 80px;
 	padding-bottom: 40px;
 
 	background-color: var(--main-background-color);
@@ -207,14 +212,16 @@ span.accent {
 }
 
 .menu-close-btn {
+	position: absolute;
+	top: 24px;
+	right: 24px;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
 	width: 24px;
 	height: 24px;
-	margin-left: auto;
-	margin-bottom: 32px;
 
 	background-color: rgba(231, 233, 252, 0.1);
 	border: 1px solid rgba(46, 47, 66, 0.1);
@@ -252,7 +259,8 @@ span.accent {
 
 .menu-tel-link {
 	font-weight: 700;
-	font-size: calc(100vw * 5/54 - 98px/27);
+	/* font-size: calc(100vw * 5/54 - 98px/27); */
+	font-size: 36px;
 	line-height: 1.11;
 	letter-spacing: 0.02em;
 	color: var(--accent-color);
@@ -268,8 +276,9 @@ span.accent {
 
 .menu-social-list {
 	display: flex;
-	widows: 100%;
 	justify-content: space-between;
+
+	max-width: 328px;
 }
 
 /* Hero */
@@ -301,6 +310,10 @@ span.accent {
 }
 
 .hero-title {
+	max-width: 320px;
+
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 0;
 	margin-bottom: 72px;
 
@@ -309,6 +322,7 @@ span.accent {
 	font-weight: 700;
 	font-size: 36px;
 	line-height: 1.11;
+	text-transform: capitalize;
 	text-align: center;
 }
 
@@ -513,6 +527,7 @@ span.accent {
 	margin-right: auto;
 	margin-left: auto;
 	margin-bottom: 72px;
+	text-align: center;
 }
 
 .footer-link {
@@ -527,6 +542,7 @@ span.accent {
 
 .footer-social {
 	margin-bottom: 72px;
+
 }
 
 
@@ -626,6 +642,7 @@ span.accent {
 
 .footer-btn-text {
 	margin-right: 16px;
+	cursor: pointer;
 }
 
 .subscribe-icon {
@@ -633,6 +650,11 @@ span.accent {
 }
 
 /* - - Portfolio - - */
+
+.projects-section {
+	padding-top: 48px;
+	padding-bottom: 48px;
+}
 
 .filter-list {
 	width: 100%;
@@ -642,7 +664,7 @@ span.accent {
 	column-gap: 24px;
 	row-gap: 16px;
 
-	margin-bottom: 72px;
+	margin-bottom: 48px;
 }
 
 .portfolio-btn {
@@ -766,8 +788,7 @@ span.accent {
 	width: 100%;
 	max-width: 392px;
 	height: auto;
-	min-height: 538px;
-	padding-top: 24px;
+	padding-top: 72px;
 	padding-right: 16px;
 	padding-bottom: 24px;
 	padding-left: 16px;
@@ -787,16 +808,27 @@ span.accent {
 	fill: currentColor;
 }
 
+.btn {
+	font-weight: 500;
+	cursor: pointer;
+
+	text-align: center;
+	letter-spacing: 0.04em;
+	line-height: inherit;
+}
+
 .modal-btn-close {
+	position: absolute;
+	top: 24px;
+	right: 24px;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
 	width: 24px;
 	height: 24px;
-	margin-left: auto;
-	margin-right: 8px;
-	margin-bottom: 24px;
+	cursor: pointer;
 
 	background-color: var(--border-white-color);
 	border: 1px solid rgba(0, 0, 0, 0.1);
@@ -959,6 +991,11 @@ span.accent {
 
 @media screen and (min-width: 480px) {
 
+	.header-container {
+		min-width: 426px;
+	}
+
+
 	.container {
 		width: 426px;
 	}
@@ -971,10 +1008,6 @@ span.accent {
 	.menu-tel-link {
 		font-size: 36px;
 	}
-
-	.menu-social-list {
-		justify-content: flex-start;
-	}
 	
 	.menu-social-item:not(:last-child) {
 		margin-right: 56px;
@@ -982,6 +1015,10 @@ span.accent {
 }
 
 @media screen and (min-width: 768px) {
+
+	.header-container {
+		width: 766px;
+	}
 
 	.container {
 		width: 766px;
@@ -1120,6 +1157,7 @@ span.accent {
 	}
 
 	.hero-title {
+		min-width: 496px;
 		font-size: 56px;
 		line-height: 1.07;
 		margin-bottom: 36px;
@@ -1167,7 +1205,7 @@ span.accent {
 		display: flex;
 		flex-wrap: wrap;
 
-		width: 526px;
+		width: 582px;
 	}
 
 	.footer-desc {
@@ -1176,6 +1214,11 @@ span.accent {
 	margin-right: 24px;
 	margin-left: 0;
 	margin-bottom: 72px;
+	text-align: left;
+	}
+
+	.footer-social {
+		text-align: left;
 	}
 
 	.wrap-footer-form {
@@ -1211,6 +1254,7 @@ span.accent {
 
 	.projects-section {
 		padding-top: 64px;
+		padding-bottom: 96px;
 	}
 
 	.projetct-list {
@@ -1299,7 +1343,12 @@ span.accent {
 
 	.section {
 			padding-top: 120px;
+			padding-bottom: 120px;
 		}
+
+	.header-container {
+		width: 1158px;
+	}
 
 	.container {
 		width: 1158px;
@@ -1324,9 +1373,11 @@ span.accent {
 	}
 
 	.feature-icon-bg {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
-		height: auto;
-		padding: 24px 100px;
+		height: 112px;
 		margin-bottom: 8px;
 
 		background-color: var(--white-site-color);
@@ -1363,8 +1414,7 @@ span.accent {
 		align-items: center;
 
 		width: 100%;
-		padding-top: 27px;
-		padding-bottom: 27px;
+		height: 70px;
 
 		background-color: rgba(46, 47, 66, 0.4);
 	}
