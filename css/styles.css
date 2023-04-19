@@ -468,7 +468,8 @@ span.accent {
 
 .social-link:hover,
 .social-link:focus {
-	background-color: var(--passed-color);
+	background-color: #31D0AA;
+	outline: transparent;
 }
 
 /* - - - Customers - - - */
@@ -505,6 +506,7 @@ span.accent {
 .customer-link:focus {
 	color: var(--accent-color);
 	border-color: var(--accent-color);
+	outline: transparent;
 }
 
 .customer-icon {
@@ -601,7 +603,8 @@ span.accent {
 
 .footer-input:focus,
 .footer-input:hover {
-	border-color: var(--accent-color);
+	border-color: var(--main-background-color);
+	opacity: 1;
 }
 
 .footer-btn {
@@ -1462,6 +1465,11 @@ span.accent {
 
 	.footer-input {
 		opacity: 1;
+	}
+
+	.footer-input:focus,
+	.footer-input:hover {
+		border-color: var(--accent-color);
 	}
 
 
